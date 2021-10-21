@@ -19,7 +19,7 @@ const list = [
   },
 ];
 
-function App() {
+const App = () => {
   return (
     <div>
       <h1>My Stories</h1>
@@ -28,21 +28,21 @@ function App() {
       <List />
     </div>
   );
-}
+};
 
-function Search() {
+const Search = () => {
   return (
     <div>
       <label htmlFor="search">Search:</label>
       <input type="text" id="search" placeholder="Search" />
     </div>
   );
-}
+};
 
-function List() {
+const List = () => {
   return (
     <ul>
-      {list.map(function (item) {
+      {list.map((item) => {
         return (
           <li key={item.objectID}>
             <span>
@@ -56,5 +56,5 @@ function List() {
       })}
     </ul>
   );
-}
+};
 export default App;
