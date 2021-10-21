@@ -19,16 +19,9 @@ const list=[
   },
 ]
 
-const numbers = [1,4,9,16];
-const newNumbers = numbers.map(function(number){
-  return number*2;
-})
-
-console.log(newNumbers)
-
 function App() {
   return (
-    <div className="App">
+    <div>
       <h1>My Stories</h1>
 
       <label htmlFor="search">Search:</label>
@@ -36,8 +29,17 @@ function App() {
       <hr/>
       <ul>
         {list.map(function(item){
-          return <li key={item.objectID}>{item.title}</li>;
-        })}
+          return (
+          <li key={item.objectID}>
+            <span>
+              <a href={item.url}>{item.title}</a>
+              {" "}
+            </span>
+            <span>{item.author}&nbsp;</span>
+            <span>{item.num_comments+" "}</span>
+            <span>{item.points}</span>
+          </li>
+        )})}
       </ul>
     </div>
   );
