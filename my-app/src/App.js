@@ -1,16 +1,13 @@
 import './App.css';
 
-const welcome = {
-  greeting: 'Hey',
-  title: 'React'
+function getTitle() {
+  return 'React';
 }
 
 function App() {
   return (
     <div className="App">
-      <h1>
-        {welcome.greeting} {welcome.title}
-      </h1>
+      <h1>Hello {getTitle()}</h1>
 
       <label htmlFor="search">Search:</label>
       <input type="text" id="search" placeholder="Search" />
