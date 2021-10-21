@@ -19,6 +19,13 @@ const list=[
   },
 ]
 
+const numbers = [1,4,9,16];
+const newNumbers = numbers.map(function(number){
+  return number*2;
+})
+
+console.log(newNumbers)
+
 function App() {
   return (
     <div className="App">
