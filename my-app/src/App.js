@@ -1,32 +1,34 @@
 import "./App.css";
 
-const list = [
-  {
-    title: "React",
-    url: "http://reactjs.org",
-    author: "Jordan Walke",
-    num_comments: 3,
-    points: 4,
-    objectID: 0,
-  },
-  {
-    title: "Redux",
-    url: "http://redux.js.org",
-    author: "Dan Abramov, Andrew Clark",
-    num_comments: 2,
-    points: 5,
-    objectID: 1,
-  },
-];
+const App = () => {
+  const stories = [
+    {
+      title: "React",
+      url: "http://reactjs.org",
+      author: "Jordan Walke",
+      num_comments: 3,
+      points: 4,
+      objectID: 0,
+    },
+    {
+      title: "Redux",
+      url: "http://redux.js.org",
+      author: "Dan Abramov, Andrew Clark",
+      num_comments: 2,
+      points: 5,
+      objectID: 1,
+    },
+  ];
 
-const App = () => (
-  <div>
-    <h1>My Stories</h1>
-    <Search />
-    <hr />
-    <List />
-  </div>
-);
+  return (
+    <div>
+      <h1>My Stories</h1>
+      <Search />
+      <hr />
+      <List list={stories} />
+    </div>
+  );
+};
 
 const Search = () => {
   const handleChange = (event) => {
@@ -46,9 +48,9 @@ const Search = () => {
   );
 };
 
-const List = () => (
+const List = (props) => (
   <ul>
-    {list.map((item) => (
+    {props.list.map((item) => (
       <li key={item.objectID}>
         <span>
           <a href={item.url}>{item.title}</a>{" "}
