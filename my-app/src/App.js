@@ -28,12 +28,23 @@ const App = () => (
   </div>
 );
 
-const Search = () => (
-  <div>
-    <label htmlFor="search">Search:</label>
-    <input type="text" id="search" placeholder="Search" />
-  </div>
-);
+const Search = () => {
+  const handleChange = (event) => {
+    console.log(event);
+  };
+
+  return (
+    <div>
+      <label htmlFor="search">Search:</label>
+      <input
+        type="text"
+        id="search"
+        placeholder="Search"
+        onChange={handleChange}
+      />
+    </div>
+  );
+};
 
 const List = () => (
   <ul>
@@ -49,13 +60,5 @@ const List = () => (
     ))}
   </ul>
 );
-
-function countPlusOne(count) {
-  return count + 1;
-}
-const countPlusOne1 = (count) => {
-  return count + 1;
-};
-const countPlusOne2 = (count) => count + 1;
 
 export default App;
