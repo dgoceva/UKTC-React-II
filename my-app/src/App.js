@@ -31,8 +31,10 @@ const App = () => {
 };
 
 const Search = () => {
+  let searchTerm = "";
+
   const handleChange = (event) => {
-    console.log(event.target.value);
+    searchTerm = event.target.value;
   };
 
   return (
@@ -44,6 +46,9 @@ const Search = () => {
         placeholder="Search"
         onChange={handleChange}
       />
+      <p>
+        Searching for <strong>{searchTerm}</strong>
+      </p>
     </div>
   );
 };
