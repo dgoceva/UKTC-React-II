@@ -21,14 +21,16 @@ const App = () => {
     },
   ];
 
+  const [searchTerm, setSearchTerm] = React.useState("");
+
   const handleSearch = (event) => {
-    console.log(event.target.value);
+    setSearchTerm(event.target.value);
   };
 
   return (
     <div>
       <h1>My Stories</h1>
-      <Search onSearcher={handleSearch} />
+      <Search onSearcher={handleSearch} searchTerm={searchTerm} />
       <hr />
       <List list={stories} />
     </div>
@@ -36,13 +38,6 @@ const App = () => {
 };
 
 const Search = (props) => {
-  const [searchTerm, setSearchTerm] = React.useState("");
-
-  const handleChange = (event) => {
-    setSearchTerm(event.target.value);
-    props.onSearcher(event);
-  };
-
   return (
     <div>
       <label htmlFor="search">Search:</label>
@@ -50,10 +45,10 @@ const Search = (props) => {
         type="text"
         id="search"
         placeholder="Search"
-        onChange={handleChange}
+        onChange={props.onSearcher}
       />
       <p>
-        Searching for <strong>{searchTerm}</strong>
+        Searching for <strong>{props.searchTerm}</strong>
       </p>
     </div>
   );
