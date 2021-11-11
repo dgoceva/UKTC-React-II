@@ -30,7 +30,10 @@ const App = () => {
   return (
     <div>
       <h1>My Stories</h1>
-      <Search onSearcher={handleSearch} searchTerm={searchTerm} />
+      <Search onSearcher={handleSearch} />
+      <p>
+        Searching for <strong>{searchTerm}</strong>
+      </p>
       <hr />
       <List list={stories} />
     </div>
@@ -47,9 +50,6 @@ const Search = (props) => {
         placeholder="Search"
         onChange={props.onSearcher}
       />
-      <p>
-        Searching for <strong>{props.searchTerm}</strong>
-      </p>
     </div>
   );
 };
