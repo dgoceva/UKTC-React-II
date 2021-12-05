@@ -9,7 +9,8 @@
 |   |  |  |--base.html
 |   |  |  |--employee_form.html
 |   |  |  |--employee_list.html
-|   | 
+|   |
+|   |-- admin.py 
 |   |-- models.py
 |   |-- forms.py
 |   |-- urls.py
