@@ -44,16 +44,16 @@ const App = () => {
   );
 };
 
-const Search = (props) => {
+const Search = ({ search, onSearcher }) => {
   return (
     <div>
       <label htmlFor="search">Search:</label>
       <input
         type="text"
         id="search"
-        value={props.search}
+        value={search}
         placeholder="Search"
-        onChange={props.onSearcher}
+        onChange={onSearcher}
       />
     </div>
   );
