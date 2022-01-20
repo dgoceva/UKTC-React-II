@@ -2,18 +2,6 @@ import React from "react";
 import "./App.css";
 
 const App = () => {
-  const user = {
-    firstName: "Ivan",
-    lastName: "Ivanov",
-  };
-  const userFirstName = user.firstName;
-  const userLastName = user.lastName;
-  console.log(userFirstName + "\t" + userLastName);
-
-  // object destructuring
-  const { firstName, lastName } = user;
-  console.log(firstName + " " + lastName);
-
   const stories = [
     {
       title: "React",
@@ -46,7 +34,7 @@ const App = () => {
   return (
     <div>
       <h1>My Stories</h1>
-      <Search onSearcher={handleSearch} />
+      <Search onSearcher={handleSearch} search={searchTerm} />
       <p>
         Searching for <strong>{searchTerm}</strong>
       </p>
@@ -63,6 +51,7 @@ const Search = (props) => {
       <input
         type="text"
         id="search"
+        value={props.search}
         placeholder="Search"
         onChange={props.onSearcher}
       />
