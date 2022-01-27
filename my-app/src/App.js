@@ -2,6 +2,24 @@ import React from "react";
 import "./App.css";
 
 const App = () => {
+  const user={
+    firstName: "John",
+    pet:{
+      name:"Sam"
+    }
+  };
+  const userName = user.firstName;
+  const petName = user.pet.name;
+  console.log(userName, petName);
+
+  const {
+    firstName,
+    pet:{
+      name
+    }
+  }=user;
+  console.log(firstName,name)
+  
   const stories = [
     {
       title: "React",
